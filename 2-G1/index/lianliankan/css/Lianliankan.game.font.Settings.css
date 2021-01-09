@@ -1,0 +1,21 @@
+﻿@charset "utf-8";
+/* CSS Lianliankan game font Settings */
+
+@font-face {
+	font-family: '汉仪娃娃篆简';
+	src: url(../fonts/汉仪娃娃篆简.ttf) format('truetype');
+	font-weight: normal;
+    font-style: normal;
+}
+@font-face {
+	font-family: '迷你简凌波字体';
+	src: url(../fonts/迷你简凌波字体.ttf) format('truetype');
+	font-weight: normal;
+    font-style: normal;
+}
+@font-face {
+	font-family: '迷你简罗卜字体';
+	src: url(../fonts/迷你简罗卜字体.ttf) format('truetype');
+	font-weight: normal;
+    font-style: normal;
+}

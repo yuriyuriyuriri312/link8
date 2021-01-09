@@ -1,0 +1,325 @@
+﻿@charset "utf-8";
+/* CSS Lianliankan game */
+
+* {
+	margin:0px;
+	padding:0px;
+	user-select: none;
+	-moz-user-select: none;
+	-webkit-user-select: none;
+	-o-user-select: none;
+	-ms-user-select: none;
+	cursor:default;
+}
+
+#suggestion {
+	width:780px;
+	position:relative;
+	text-align:center;
+	line-height:30px;
+	color:#9F0;
+	left:23%;
+	top:40%;
+	font-family:'汉仪娃娃篆简';
+	font-size:21px;
+	text-shadow:0px 0px 0px #fff;
+}
+#suggestion p {
+	color:#F30;
+	font-family:'汉仪娃娃篆简';
+}
+body {
+	font-size:20px;
+	text-align: center ;
+	background: #a46740 url(../images/game_bg/bg.jpg) ;
+}
+
+/* 页眉标题设置 */
+#title {
+	text-align:center;
+	text-shadow:5px 2px 4px #fff;
+	margin:10px;
+	padding:5px;
+	
+	-webkit-box-shadow: 0 -5px 5px #333;
+	-moz-box-shadow: 0 -5px 5px #333;
+	-ms-box-shadow: 0 -5px 5px #333;
+	-o-box-shadow: 0 -5px 5px #333;
+}
+.a1 {
+	color:#FF3;
+	font-family:'迷你简凌波字体';
+}
+.a2 {
+	color:#CF6;
+	font-family:'汉仪娃娃篆简';
+}
+.a3 {
+	color:#F90;
+	font-family:'迷你简凌波字体';
+}
+
+
+#gameBody {
+	width:900px;
+	height:500px;
+	position:absolute;
+	left:50%;
+	margin-top:8px;
+	margin-left:-390px;
+}
+/* 游戏区域设置 */
+#game {
+	width:780px;
+	height:480px;
+	border-radius:10px ;
+	border:2px solid #666;
+	background:url(../images/game_bg/table.jpg);
+	
+	float:left;
+	/* 布局方式 */
+	display:-webkit-box;
+	display:-moz-box;
+	display:-ms-box;
+	display:-o-box;
+	/*用于设置水平方位、垂直方位对齐*/
+	-webkit-box-pack:center;
+	-moz-box-pack:center;
+	-ms-box-pack:center;
+	-o-box-pack:center;
+	-webkit-box-align:center;
+	-moz-box-align:center;
+	-ms-box-align:center;
+	-o-box-align:center;
+}
+
+/* 把所有纸牌元素的父级容器样式 */
+#imgs {
+	position: relative;
+	width:704px;
+	height:394px;
+	border-radius:4px;
+	border:2px solid #9DE0F3;
+	box-shadow:20px 20px 10px rgba(30,30,30,.8);
+	background:url(../images/game_bg/popup_bg.jpg);
+}
+
+/* 给每个图片设置样式 */
+.img {
+	width:39px;
+	height:49px;
+	border-radius:4px;
+	position:absolute;
+	border:1px solid #666;
+	/* perspective使其有立体视觉效果，也就是实现3D效果 */
+	-webkit-perspective:600;
+	-moz-perspective:600;
+	-ms-perspective:600;
+	-o-perspective:600;
+	-webkit-transition:all 1s;
+	-moz-transition:all 1s;
+	-ms-transition:all 1s;
+	-o-transition:all 1s;
+}
+/* 边框阴影 */
+.img:hover .photo, .img-flipped .photo {
+	-webkit-box-shadow:0 0 20px #aaa;
+	-moz-box-shadow:0 0 20px #aaa;
+	-ms-box-shadow:0 0 20px #aaa;
+	-o-box-shadow:0 0 20px #aaa;
+}
+.bg_img {
+	background-image:url(../images/0.gif);
+}
+.photo {
+	width:100%;
+	height:100%;
+	border-radius:5px;
+	position:absolute;
+	-webkit-transition-property:opacity,box-shadow;
+	-moz-transition-property:opacity,box-shadow;
+	-ms-transition-property:opacity,box-shadow;
+	-o-transition-property:opacity,box-shadow;
+	-webkit-transition-duration:.5s;
+	-moz-transition-duration:.5s;
+	-ms-transition-duration:.5s;
+	-o-transition-duration:.5s;
+	-webkit-backface-visibility:hidden;
+	-moz-backface-visibility:hidden;
+	-ms-backface-visibility:hidden;
+	-o-backface-visibility:hidden;
+}
+/* 添加配对成功后的样式 */
+.img-removed {
+	opacity:0;
+}
+
+/* 设置标题计时器 */
+.dat{
+	color:#3C3;
+	padding:5px;
+	text-shadow:2px 2px 5px #fff;
+	font-family:'迷你简罗卜字体';
+}
+
+/*游戏结束后弹出窗口样式*/
+#popup {
+	font-family:'汉仪娃娃篆简';
+	font-size:28px;
+	font-weight:700;	  
+	text-shadow:0px 1px 2px #fff;
+	
+	color:#222;
+	
+	position:absolute;	  
+	width:100%;
+	height:100%;
+	top:0px;
+	left:0px;
+		
+	background:rgba(0,0,0,.5);
+	
+	-webkit-transition:all .5s ease-in;
+	-moz-transition:all .5s ease-in;
+	-ms-transition:all .5s ease-in;
+	-o-transition:all .5s ease-in;
+}
+/*结束窗口标题*/
+#popup h1 {
+	font-weight: 400;
+	color:#CC3399;
+}
+/*中间主窗口*/
+#popup-box {
+	width: 400px;
+	height: 300px;
+	background: #ccc url(../images/game_bg/popup_bg.jpg);
+	position: relative;
+	
+	border-radius: 10px;
+	
+	top:30%;
+	left:35%;
+	
+	-webkit-box-shadow: 0 5px 5px #333;
+	-moz-box-shadow: 0 5px 5px #333;
+	-ms-box-shadow: 0 5px 5px #333;
+	-o-box-shadow: 0 5px 5px #333;
+	
+	display:-webkit-box;
+	display:-moz-box;
+	display:-ms-box;
+	display:-o-box;
+	
+	-webkit-box-pack:center;
+	-moz-box-pack:center;
+	-ms-box-pack:center;
+	-o-box-pack:center;
+	-webkit-box-align:center;
+	-moz-box-align:center;
+	-ms-box-align:center;
+	-o-box-align:center;
+	
+	-webkit-transition:all .8s ease-in;
+	-moz-transition:all .8s ease-in;
+	-ms-transition:all .8s ease-in;
+	-o-transition:all .8s ease-in;
+}
+
+/* 难易度样式设置 */
+#play {
+	margin-top:35px;
+}
+#play button {
+	border-radius:15px;
+	margin:5px;
+	width:100px;
+	height:35px;
+}
+/*窗口可见样式 */
+#popup.hide {
+	background:rgba(0,0,0,0);
+	visibility:hidden;		
+}
+/*窗口初始位置*/
+#popup.hide{
+	margin-top: -800px;
+}
+
+/* 设置区域 */
+#setUp {
+	float:left;
+	margin-top:80px;
+}
+/* 所有按钮样式设置 */
+#pauseToContinue,#refreshGame {
+	border-radius:15px;
+	width:100px;
+	height:35px;
+	margin:10px 5px;
+}
+#bg_audio,#ef_audio {
+	width:100px;
+	height:35px;
+	margin:10px 5px;
+	background-size:contain;
+	border-radius:15px;
+	border:none;
+	
+	/*-webkit-transition:all .8s ease-in;
+	-moz-transition:all .8s ease-in;
+	-ms-transition:all .8s ease-in;
+	-o-transition:all .8s ease-in;*/
+}
+#bg_audio {
+	background-image:url(../images/game_bg/bg_close.png);
+}
+#ef_audio {
+	background-image:url(../images/game_bg/au_close.png);
+}
+
+/* 火狐浏览器Hack设置 */
+@-moz-document url-prefix(){
+	#popup-box{left:0px;} 
+	#imgs{width:708px;height:398px;}
+	#setUp{float:right;}
+	#game{float:none;}
+}
+
+/* 图片样式 */
+.img_1 { background-image:url(../images/1.gif);}
+.img_2 { background-image:url(../images/2.gif);}
+.img_3 { background-image:url(../images/3.gif);}
+.img_4 { background-image:url(../images/4.gif);}
+.img_5 { background-image:url(../images/5.gif);}
+.img_6 { background-image:url(../images/6.gif);}
+.img_7 { background-image:url(../images/7.gif);}
+.img_8 { background-image:url(../images/8.gif);}
+.img_9 { background-image:url(../images/9.gif);}
+.img_10 { background-image:url(../images/10.gif);}
+.img_11 { background-image:url(../images/11.gif);}
+.img_12 { background-image:url(../images/12.gif);}
+.img_13 { background-image:url(../images/13.gif);}
+.img_14 { background-image:url(../images/14.gif);}
+.img_15 { background-image:url(../images/15.gif);}
+.img_16 { background-image:url(../images/16.gif);}
+.img_17 { background-image:url(../images/17.gif);}
+.img_18 { background-image:url(../images/18.gif);}
+.img_19 { background-image:url(../images/19.gif);}
+.img_20 { background-image:url(../images/20.gif);}
+.img_21 { background-image:url(../images/21.gif);}
+.img_22 { background-image:url(../images/22.gif);}
+.img_23 { background-image:url(../images/23.gif);}
+.img_24 { background-image:url(../images/24.gif);}
+.img_25 { background-image:url(../images/25.gif);}
+.img_26 { background-image:url(../images/26.gif);}
+.img_27 { background-image:url(../images/27.gif);}
+.img_28 { background-image:url(../images/28.gif);}
+.img_29 { background-image:url(../images/29.gif);}
+.img_30 { background-image:url(../images/30.gif);}
+.img_31 { background-image:url(../images/31.gif);}
+.img_32 { background-image:url(../images/32.gif);}
+.img_33 { background-image:url(../images/33.gif);}
+.img_34 { background-image:url(../images/34.gif);}
+.img_35 { background-image:url(../images/35.gif);}
+.img_36 { background-image:url(../images/36.gif);}

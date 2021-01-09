@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, user-scalable=yes, initial-scale=0.3, maxmum-scale=1.0, minimum-scale=0.3">
+    <title>Home</title>
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/style.css">
+    <script src="js/jquery-3.3.1.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/vue.min.js"></script>
+
+</head>
+<body>
+    <div id="app" class="container-fluid" >
+        <div class="box" :style="box_bg">
+            <div class="person">
+                <img :src="person"  @click="open_dialog">
+            </div>
+            <div class="logo">
+                <img src="img/标志.png" alt="" @click="showhome">
+            </div>
+
+            <div class="dialog">
+                <h4 id="txts"></h4>
+                <div class="bg"></div>
+            </div>
+
+            <div id="select">
+                <div class="row ">
+                    <div class="col-md-12">
+                        <input type="button" value="推荐一个提高工作效率的笔记本吧" @click="openMsg('a')">
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-12">
+                        <input type="button" value="我还想玩游戏应该怎么选呢" @click="openMsg('b')">
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-12">
+                      <a href="lianliankan/lianliankan.html">  <input type="button" value="想要一起玩耍"></a>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-12">
+                        <input type="button" value="我差不多得离开了，再见" @click="openMsg('d')">
+                    </div>
+                </div>
+                <div class="bg"></div>
+            </div>
+        </div>
+        <div class="row shops text-center">
+            <div class="col-md-2" >
+                <img src="img/mocic奶茶.png" @mouseenter="t1_enter" @mouseleave="t1_leave" id="tem1" tabindex="0" role="button" data-toggle="popover" data-placement="top" data-trigger="focus" title="Revo 9 " data-content='CPU:英特尔酷睿i7-10875H;内存容量:16GB,DDR4 3200MHz;硬盘容量：512GB SSD;显卡规格：NVDIA GeForce RTX2060；显存容量：6GB;屏幕尺寸：15.6英寸；屏幕分辨率：FHD 1920×1080；屏幕类型：IPS 240Hz NTSC72% sRGB100%'>
+            </div>
+            <div class="col-md-2">
+                <img src="img/mocic咖啡.png" @mouseenter="t2_enter" @mouseleave="t2_leave" id="tem2" tabindex="0" role="button" data-toggle="popover" data-placement="top" data-trigger="focus" title="炫猎7 " data-content="CPU:AMD Ryzen™ 7 4800H;内存容量:8GB,DDR4 3200MHz;硬盘容量：512GB SSD;显卡规格：NVDIA GeForce RTX2060；显存容量：6GB;屏幕尺寸：15.6英寸；屏幕分辨率：FHD 1920×1080；屏幕类型：LED 背光非触摸屏">
+            </div>
+            <div class="col-md-2">
+                <img src="img/摩卡咖啡.png" @mouseenter="t3_enter" @mouseleave="t3_leave" id="tem3" tabindex="0" role="button" data-toggle="popover" data-placement="top" data-trigger="focus" title="灵睿 7 " data-content="CPU:AMD Ryzen™ 9 4900HS 4800H;内存容量:8GB,DDR4 3200MHz;硬盘容量：512GB SSD;显卡规格：NVIDIA® GeForce RTX™ 2060 with Max-Q Design；显存容量：6GB;屏幕尺寸：	14英寸；屏幕分辨率：QHD (2560 x 1440) 16:9；屏幕类型：IPS 防眩光非触摸雾面屏">
+            </div>
+            <div class="col-md-2">
+                <img src="img/草莓奶茶.png" @mouseenter="t4_enter" @mouseleave="t4_leave" id="tem4" tabindex="0" role="button" data-toggle="popover" data-placement="top" data-trigger="focus" title="艾雪8  " data-content="CPU:英特尔® 酷睿™ i5-1135G7™ 7 4800H;内存容量:16GB,DDR4 3200MHz;硬盘容量：512GB SSD;显卡规格：NVIDIA® GeForce® MX350；显存容量：2GB;屏幕尺寸：14英寸；屏幕分辨率：FHD 1920×1080；屏幕类型：IPS防眩光雾面屏">
+            </div>
+            <div class="col-md-2">
+                <img src="img/草莓沙冰.png" @mouseenter="t5_enter" @mouseleave="t5_leave" id="tem5" tabindex="0" role="button" data-toggle="popover" data-placement="top" data-trigger="focus" title="Reg Book14 " data-content="CPU:英特尔® 酷睿™i7-1165G7;内存容量:16GB,LPDDR4X 4266MHz;硬盘容量：1TB SSD;显卡规格：Intel® Iris® Xe Graphics;屏幕尺寸：13.9英寸；屏幕分辨率：3.3K（3300 x 2200）3:2；屏幕类型：镜面触控屏">
+            </div>
+            <div class="col-md-2">
+                <img src="img/葡萄沙冰.png" @mouseenter="t6_enter" @mouseleave="t6_leave" id="tem6" tabindex="0" role="button" data-toggle="popover" data-placement="top" data-trigger="focus" title="晓翼 " data-content="CPU:英特尔® 酷睿™i5-1035G1;内存容量:8GB,DDR4 2666MHz;硬盘容量：512GB  SSD;显卡规格：NVIDIA® GeForce® MX330 2GB;屏幕尺寸：15.6英寸；屏幕分辨率：FHD 1920x1080；屏幕类型：IPS 防眩光非触摸雾面屏">
+            </div>
+        </div>
+        <a href="https://www.wjx.cn/jq/101946676.aspx"><img src="img/填写问卷.png" width="262px" height="43px"></a>
+    </div>
+
+    <script src="js/index.js"></script>
+</body>
+</html>

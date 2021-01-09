@@ -1,0 +1,57 @@
+﻿<!doctype html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>连连看</title>
+        <link rel="stylesheet" type="text/css" href="css/Lianliankan.game.font.Settings.css" />
+        <link rel="stylesheet" type="text/css" href="css/Lianliankan.game.css" />
+    </head>
+    
+    <body>
+    	<header id="title">
+        	<h1><span class="a1">连</span><span class="a2">连</span><span class="a3">看</span></h1>
+        </header>
+        
+        <div class="dat" id="timer">
+    		剩余时间&nbsp;&nbsp;<span id="elapsed-time">0:00</span>
+		</div>
+        
+        <section id="gameBody">
+            <section id="game">
+                <div id="imgs">
+                    <div class="img">
+                        <div class="photo bg_img"></div>
+                    </div>
+                </div>
+            </section>
+            
+            <section id="setUp">
+            	
+        </section>
+        
+        <section id="popup">
+            <div id="popup-box">
+            	<div>
+                    <h1 id="isWin"> &nbsp;开始游戏？</h1>
+                    <p id="play">
+                    	<button onClick="playGame(18)">简单</button><br/>
+                        <button onClick="playGame(24)">普通</button><br/>
+                        <button onClick="playGame(36)">困难</button><br/>
+                        <a href="index2/index2.html">back</a>
+                    </p>
+                </div>
+            </div>
+        	
+        </section>
+    	
+        
+        <footer>
+            <audio id="audio_other" autoplay>您的浏览器不支持背景音效哦！</audio>
+            <audio id="audio_bg" autoplay loop></audio>
+            <audio id="audio_alarm" autoplay></audio>
+        </footer>
+        <script type="text/javascript" language="javascript" src="js/jquery-1.8.3.min.js"></script>
+    	<script type="text/javascript" language="javascript" src="js/Lianliankan.game.js"></script>
+        <a href="index2/index2.html">back</a>
+    </body>
+</html>
